@@ -1,6 +1,5 @@
-import { error } from "console";
-
-export function converteTemperatura(temperatura, unidade) {
+//linha 2 serve para importar a função de conversão de temperatura
+export function converterTemperatura(temperatura, unidade) {
     let resultado = 0;
     let unidadeResultado = '';
 
