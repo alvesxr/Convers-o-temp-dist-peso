@@ -6,14 +6,36 @@ function App() {
   // da conversão de temperatura
   const [temperatura, setTemperatura] = useState('');
   const [unidadeTemperatura, setUnidadeTemperatura] = useState('');
+  const [resultadoTemperatura, setResultadoTemperatura] = useState('');
+  
+  const handleSubmitTemperatura = async (e) => {
+  e.preventDefault(); // impede o recarregamento da página
+  try {
+    const response = await fetch('http://localhost:3000/converter_temperatura', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        temperatura: temperatura,
+        unidade: unidadeTemperatura
+      })
+    });
+    const data = await response.json();
+    setResultadoTemperatura(`${data.resultado} ${data.unidadeResultado}`);
+  } catch (error) {
+    setResultadoTemperatura('Erro ao converter temperatura');
+  }
+};
+
   // da conversão de peso
   const [peso, setPeso] = useState('');
   const [unidadePeso, setUnidadePeso] = useState('');
+  const [resultadoPeso, setResultadoPeso] = useState('');
   // da conversão de distância
   const [distancia, setDistancia] = useState('');
   const [unidadeDistancia, setUnidadeDistancia] = useState('');
+  const [resultadoDistancia, setResultadoDistancia] = useState('');
 
-  
+
 
   return (
     <>
@@ -21,7 +43,7 @@ function App() {
         <h1>Conversor de Unidades</h1>
       </div>
       <div className='forms-container'>
-        <form>
+        <form onSubmit={handleSubmitTemperatura}>
           <input
             type="number"
             value={temperatura}
@@ -35,6 +57,7 @@ function App() {
             placeholder="Unidade de Temperatura (C/F)"
           />
           <button type="submit">Converter</button>
+          {resultadoTemperatura && <p>Resultado: {resultadoTemperatura}</p>}
         </form>
         <form>
           <input
