@@ -1,0 +1,49 @@
+.Conversor_de_Unidades {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: flex-start; /* Mantém no topo */
+  padding-top: 20px;
+  width: 100%;
+}
+
+.forms-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* Alinha à esquerda */
+  gap: 32px;                  /* Espaço entre os forms */
+  margin-left: 5vw;           /* Espaço da esquerda, ajuste se quiser */
+  margin-top: 32px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 350px;
+  margin: 0;                  /* Remove centralização automática */
+  padding: 24px;
+  background: #333;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0002;
+}
+
+form input,
+form button {
+  font-size: 1.2em;            /* Letras maiores */
+  padding: 12px;
+  border-radius: 8px;          /* Bordas arredondadas nos campos */
+  border: 1px solid #888;
+  outline: none;
+}
+
+form button {
+  background: #646cff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button:hover {
+  background: #535bf2;
+}
