@@ -1,5 +1,6 @@
 //importacões de pacotes:
 import express from 'express'; //adicionar "type": "module" no package.json
+import cors from 'cors';
 
 //importacões de funções:
 import { converterTemperatura } from '../controllers/conversao_temperatura.js';
@@ -10,7 +11,6 @@ import { converterDistancia } from '../controllers/conversao_distancia.js';
 const server = express(); //instancia do express
 server.use(express.json()); //para o express entender o json
 
-const cors = require('cors'); //importando o cors
 server.use(cors()); //habilitando o cors
 //cors serve para permitir que o servidor aceite requisições de outros domínios
 //isso é importante para o front-end conseguir se comunicar com o back-end
