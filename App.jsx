@@ -25,18 +25,57 @@ function App() {
     setResultadoTemperatura('Erro ao converter temperatura');
   }
 };
+// variáveis de estado para armazenar os valores de entrada e resultado
 
   // da conversão de peso
   const [peso, setPeso] = useState('');
   const [unidadePeso, setUnidadePeso] = useState('');
   const [resultadoPeso, setResultadoPeso] = useState('');
+
+  const handleSubmitPeso = async (e) => {
+    e.preventDefault(); // impede o recarregamento da página
+    try {
+      const response = await fetch('http://localhost:3000/converter_peso', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          peso: peso,
+          unidade: unidadePeso
+        })
+      });
+      const data = await response.json();
+      setResultadoPeso(`${data.resultado} ${data.unidadeResultado}`);
+    } catch (error) {
+      setResultadoPeso('Erro ao converter peso');
+    }
+  }
+  // variáveis de estado para armazenar os valores de entrada e resultado
+
   // da conversão de distância
   const [distancia, setDistancia] = useState('');
   const [unidadeDistancia, setUnidadeDistancia] = useState('');
   const [resultadoDistancia, setResultadoDistancia] = useState('');
 
+  const handleSubmitDistancia = async (e) => {
+    e.preventDefault(); // impede o recarregamento da página
+    try {
+      const response = await fetch('http://localhost:3000/converter_distancia', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          distancia: distancia,
+          unidade: unidadeDistancia
+        })
+      });
+      const data = await response.json();
+      setResultadoDistancia(`${data.resultado} ${data.unidadeResultado}`);
+    } catch (error) {
+      setResultadoDistancia('Erro ao converter distância');
+    }
+  }
+  // variáveis de estado para armazenar os valores de entrada e resultado
 
-
+//
   return (
     <>
       <div className='Conversor_de_Unidades'>
@@ -59,7 +98,7 @@ function App() {
           <button type="submit">Converter</button>
           {resultadoTemperatura && <p>Resultado: {resultadoTemperatura}</p>}
         </form>
-        <form>
+        <form onSubmit={handleSubmitPeso}>
           <input
             type="number"
             value={peso}
@@ -73,8 +112,9 @@ function App() {
             placeholder="Unidade de Peso (kg/lb)"
           />
           <button type="submit">Converter</button>
+          {resultadoPeso && <p>Resultado: {resultadoPeso}</p>}
         </form>
-        <form>
+        <form onSubmit={handleSubmitDistancia}>
           <input
             type="number"
             value={distancia}
@@ -88,6 +128,7 @@ function App() {
             placeholder="Unidade de Distância (km/mi)"
           />
           <button type="submit">Converter</button>
+          {resultadoDistancia && <p>Resultado: {resultadoDistancia}</p>}
         </form>
       </div>
     </>
