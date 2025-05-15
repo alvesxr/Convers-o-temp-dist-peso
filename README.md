@@ -15,3 +15,21 @@
 <p>
   A API recebe requisições HTTP do tipo POST com os valores e unidades a serem convertidos. Ela retorna o resultado da conversão e a unidade correspondente.
 </p>
+## Front-end React
+
+O front-end deste repositório foi desenvolvido em React, utilizando Vite para proporcionar uma experiência rápida e moderna. Ele oferece uma interface intuitiva para realizar conversões de temperatura, peso e distância.
+
+### Principais características
+
+- **Interface amigável:** Permite selecionar o tipo de conversão, inserir valores e escolher as unidades de origem e destino.
+- **Integração com a API:** As conversões são feitas em tempo real, consumindo os endpoints da API Node.js.
+- **Exibição instantânea:** O resultado da conversão aparece imediatamente após o envio.
+- **Código organizado:** O projeto possui estrutura simples, facilitando manutenção e futuras melhorias.
+
+### Estrutura do front-end
+
+- `src`: Contém os arquivos principais da aplicação React.
+- `src/App.jsx`: Componente principal da aplicação, responsável pela interface e lógica de conversão.
+- `src/main.jsx`: Ponto de entrada da aplicação.
+
+> Certifique-se de que a API esteja em execução para que o front-end funcione corretamente.
