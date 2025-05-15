@@ -15,20 +15,27 @@
 <p>
   A API recebe requisições HTTP do tipo POST com os valores e unidades a serem convertidos. Ela retorna o resultado da conversão e a unidade correspondente.
 </p>
-<h1>Front-end React</h1> 
+<h1>Front-end React</h1>
 
-O front-end deste repositório foi desenvolvido em React, utilizando Vite para proporcionar uma experiência rápida e moderna. Ele oferece uma interface intuitiva para realizar conversões de temperatura, peso e distância.
+<p>
+  O front-end deste repositório foi desenvolvido em React, utilizando Vite para proporcionar uma experiência rápida e moderna. Ele oferece uma interface intuitiva para realizar conversões de temperatura, peso e distância.
+</p>
 
 <h2>Principais características</h2>
-
-- **Interface amigável:** Permite selecionar o tipo de conversão, inserir valores e escolher as unidades de origem e destino.
-- **Integração com a API:** As conversões são feitas em tempo real, consumindo os endpoints da API Node.js.
-- **Exibição instantânea:** O resultado da conversão aparece imediatamente após o envio.
-- **Código organizado:** O projeto possui estrutura simples, facilitando manutenção e futuras melhorias.
+<ul>
+  <li><strong>Interface amigável:</strong> Permite selecionar o tipo de conversão, inserir valores e escolher as unidades de origem e destino.</li>
+  <li><strong>Integração com a API:</strong> As conversões são feitas em tempo real, consumindo os endpoints da API Node.js.</li>
+  <li><strong>Exibição instantânea:</strong> O resultado da conversão aparece imediatamente após o envio.</li>
+  <li><strong>Código organizado:</strong> O projeto possui estrutura simples, facilitando manutenção e futuras melhorias.</li>
+</ul>
 
 <h2>Estrutura do front-end</h2>
-- `src`: Contém os arquivos principais da aplicação React.
-- `src/App.jsx`: Componente principal da aplicação, responsável pela interface e lógica de conversão.
-- `src/main.jsx`: Ponto de entrada da aplicação.
+<ul>
+  <li><code>src</code>: Contém os arquivos principais da aplicação React.</li>
+  <li><code>src/App.jsx</code>: Componente principal da aplicação, responsável pela interface e lógica de conversão.</li>
+  <li><code>src/main.jsx</code>: Ponto de entrada da aplicação.</li>
+</ul>
 
-> Certifique-se de que a API esteja em execução para que o front-end funcione corretamente.
+<p>
+  <strong>Observação:</strong> Certifique-se de que a API esteja em execução para que o front-end funcione corretamente.
+</p>
